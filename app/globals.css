@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .newspaper-columns {
+    column-count: 2;
+    column-gap: 2rem;
+    column-rule: 1px solid #d6c7b2;
+  }
+
+  @media (min-width: 1024px) {
+    .newspaper-columns-3 {
+      column-count: 3;
+      column-gap: 1.75rem;
+      column-rule: 1px solid #d6c7b2;
+    }
+  }
+}
+
+@media print {
+  header, nav, .no-print, button:not(.print-include) {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .newspaper-sheet {
+    border: 3px double #111 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
